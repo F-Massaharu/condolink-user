@@ -14,6 +14,11 @@ class UserController(private val userService: UserService) {
         return userService.cadastrarUser(username, password)
     }
 
+    @PostMapping("/remove")
+    fun removeUser(@RequestParam username: String, @RequestParam password: String): User {
+        return userService.cadastrarUser(username, password)
+    }
+
     @PostMapping("/login")
     fun loginUser(@RequestParam username: String, @RequestParam password: String): User? {
         return userService.loginUser(username, password)
